@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ffconf 2024 - UK web and JavaScript conference</title>
     <meta name="description" content="ffconf - the UK's best JavaScript and Web conference in Brighton" />
+    <link rel="stylesheet" href="/assets/font.css">
+    <link rel="stylesheet" href="/assets/style.css">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicons/favicon-192.png">
@@ -19,70 +21,154 @@
     <meta property="og:url" content="https://2023.ffconf.org/">
     <meta property="og:title" content="ffconf 🌟 UK web conference since 2009">
     <meta property="og:description" content="ffconf - the UK's best JavaScript and Web conference in Brighton.">
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-        text-align: center;
-        font-size: 24px;
-        font-size: 6vw;
-        font-size: clamp(1.3rem, 3vw, 3rem);
-        color: black;
-        line-height: 2;
-      }
-
-      svg {
-        max-width: clamp(3rem, 11rem, 40vh);
-      }
-
-      html {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-      }
-
-      body {
-        margin: 0 auto;
-      }
-
-      a {
-        display: inline-block;
-        text-decoration-thickness: 2px;
-        font-size: 0.8rem;
-        padding: 4px 24px;
-      }
-
-      a:hover {
-        background: black;
-        color: white;
-        text-decoration: none;
-      }
-
-      h2 span {
-        font-weight: 400;
-      }
-    </style>
   </head>
 
   <body>
-    <h1>
-      <svg alt="ffconf" title="ffconf" viewBox="0 0 496 495" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" fill-rule="evenodd">
-          <path
-            d="M218.3 491.5c33.6-8 78.6-31.8 139.7-73.5 38-26 48.1-34.1 72-57.1 43.4-42 62.3-82.8 65.7-142.6 3.3-61.8-18.2-116.1-59-149.2C384.7 26.9 279.9-.3 170.4 0c0 0-51.5.8-70.9 5.7-66.2 16.5-94.4 52.5-99 126-5 80.7 33.6 216.8 82.2 291 6.2 9.3 19.4 25.1 29.2 35.2 33.4 33.4 64.7 43.2 106.4 33.6z"
-            fill="#000" />
-          <path
-            d="M160.3 283.4V229H124v-33.7h36.3v-9.6c0-33.6 24.9-57.7 59.6-57.7 19.5 0 18.2 1.3 19.1 2.6 0 9.9-4.5 31.8-4.5 31.8h-13.3c-15.5 1.6-22 8.3-22 22.8v10.1h54.4v-13.7c0-28.2 27-52.3 57.3-52.3 11 0 20.5.5 21.3 1.3.8.8.2 8-1.3 16.3l-2.6 14.8h-11.2c-15.2 0-24.3 7.7-26.4 22.7l-1.6 11H334V229h-44V337.7h-36.4V229h-54.4l-.5 53.8-.8 53.6-18.7.8-18.9.8v-54.6z"
-            fill="#FFF" />
-        </g>
-      </svg>
-    </h1>
-    <h2>Friday 8 November 2024</h2>
-    <p>Save the date.</p>
-    <p><a href="https://ffconf.org/news">Get the latest news</a></p>
+    <header>
+      <h1>
+        <img title="ffconf" src="./assets/logo2024.svg">
+      </h1>
+      <h2>ffconf</h2>
+      <h3>Back Friday 8 November</h3>
+    </header>
+    <main>
+
+      <h2 id="tickets">Tickets</h2>
+      <p>Our tickets will be available at 10am UK time on 22nd April, but if you want a feel for what to
+        expect, please browse and enjoy our <a target="_blank" href="https://ffconf.org/talks">previous event talks</a>.
+      </p>
+
+      <p hidden id="buynow" class="cta"><a class="button" href="https://buytickets.at/ffconf2022/707580">Buy now @
+          £249+VAT</a></p>
+      <p id="available" class="cta"><span class="button">Launching in <output id="output">…</output></span></p>
+      <script>
+        const t = Date.parse("2024-04-22T09:00:00Z");
+        const output = document.getElementById('output');
+
+        function update() {
+          const now = Date.now();
+
+          if (now > t) {
+            document.getElementById('available').hidden = true;
+            document.getElementById('buynow').hidden = false;
+          } else {
+            const milliseconds = (t - now);
+            const ms = (milliseconds % 1000).toFixed(0).padStart(3, '0');
+            const seconds = ((milliseconds / 1000) % 60).toFixed(0).padStart(2, '0');
+            const minutes = (((milliseconds / (1000 * 60)) % 60)).toFixed(0).padStart(2, '0');
+            const hours = (((milliseconds / (1000 * 60 * 60)) % 24)).toFixed(0).padStart(2, '0');
+            const days = (((milliseconds / (1000 * 60 * 60 * 24)))).toFixed(0);
+
+            if (days > 0) {
+              output.textContent = `${days}d, ${hours}h${minutes}m${seconds}.${ms}`;
+            } else {
+              output.textContent = `${hours}h${minutes}m${seconds}.${ms}`;
+            }
+
+
+            requestAnimationFrame(update);
+          }
+        }
+        update();
+      </script>
+
+      <p><small>This is our main run of tickets priced at £249+VAT.</small></p>
+
+      <h2 id="what-to-expect">What to Expect</h2>
+      <ul>
+        <li>📅 Friday 08-Nov 2024 in Brighton</li>
+        <li>⏰ 9-6pm all day conference</li>
+        <li>🌟 Eight amazing and inspiring talks</li>
+        <li>😌 Incredibly comfortable seats</li>
+        <li>🏰 Held at <a href="https://www.picturehouses.com/cinema/duke-of-york-s-picturehouse/information">Duke of
+            Yorks</a> cinema</li>
+        <li>🤗 After party to socialise, network &amp; play games</li>
+        <li>🦾 <a href="https://ffconf.org/scholarship/">Inclusion scholarship programme</a></li>
+        <li>🌈 Sunshine 100% (not) guaranteed</li>
+      </ul>
+
+
+      <h2 id="locations">Locations</h2>
+      <div class="locations">
+        <div>
+          <h3 id="venues">Venues</h3>
+          <dl>
+            <dt>The Conference</dt>
+            <dd><a href="https://www.picturehouses.com/cinema/duke-of-york-s-picturehouse/information">Duke of
+                Yorks cinema</a></dd>
+
+            <dt>Early morning networking from 7:30am</dt>
+            <dd><a href="https://facebook.com/MoesatTheCircus/">Moe's at the
+                Circus</a></dd>
+            <dt>"Lunch with Future Friends" and social on Thursday</dt>
+            <dd><a href="https://thelounges.co.uk/alcampo/">Al
+                Campo</a></dd>
+          </dl>
+        </div>
+        <div>
+          <h3 id="hotels">Hotels</h3>
+          <dl>
+            <dt><a href="https://www.jurysinns.com/hotels/brighton">Jury's Inn</a></dt>
+            <dd>From £98, next to train station & close to venue</dd>
+
+            <dt><a
+                href="https://www.accorhotels.com/gb/hotel-6444-ibis-brighton-city-centre-station/index.shtml">Ibis</a>
+            </dt>
+            <dd>
+              From £87, directly outside the front of the station</dd>
+            <dt><a href="https://www.travelodge.co.uk/hotels/18/Brighton-hotel">Travelodge</a></dt>
+            <dd>From £71</dd>
+            <dt>
+              <a href="https://www.jurysinns.com/hotels/brighton-waterfront">Jury's Inn Waterfront</a>
+            </dt>
+            <dd>
+              From £157, close to after party venue</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="get-involved">
+        <h2 id="get-involved">Get involved</h2>
+        <ul class="big">
+          <li><a href="https://ffconf.org/cfp-apply">Apply to speak</a></li>
+          <li><a class="alt-link" href="https://ffconf.org/scholarship">Apply for our inclusion scholarship</a></li>
+          <li><a href="https://ffconf.org/news">Subscribe for the latest announcements</a></li>
+        </ul>
+      </div>
+
+      <div hidden class="sponsors-wrapper">
+        <h2 id="sponsors">Sponsors</h2>
+        <p>Without our sponsors and supporters, our event would not be possible, please take a moment to look at their
+          web sites and find out more about them.</p>
+        <p>Include your company to support ffconf and <a
+            href="mailto:events@leftlogic.com?subject=Request%20for%20sponsor%20pack%20%5B2022%5D">request
+            sponsor pack today</a></p>
+        <div class="sponsors l1">
+          <h3>Platinum supporter</h3>
+
+        </div>
+        <div class="sponsors l2">
+          <h3>Day supporters</h3>
+
+        </div>
+        <div class="sponsors l3">
+          <h3>Scholarship supporters</h3>
+
+        </div>
+
+      </div>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="https://ffconf.org/accessibility">Venue Accessibility</a></li>
+        <li><a href="https://ffconf.org/covid">COVID policy</a></li>
+        <li><a href="https://ffconf.org/inclusion">Inclusion Statement</a></li>
+        <li><a href="https://ffconf.org/scholarship">Scholarship Programme</a></li>
+        <li><a href="https://ffconf.org/code-of-conduct">Code of Conduct</a></li>
+        <li><a href="https://ffconf.org/terms">Terms</a></li>
+        <li><a href="https://ffconf.org/privacy">Privacy</a></li>
+      </ul>
+    </footer>
     <!-- nope, no tracking here today. -->
   </body>
 

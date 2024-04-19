@@ -62,9 +62,13 @@ p a {
 }
 
 .big a {
-  padding: 24px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
+  padding: 12px;
+  line-height: 1.4;
+  background: var(--c-highlight);
+  padding: 24px;
+  display: inline-block;
 }
 
 .big a:hover,
@@ -72,10 +76,6 @@ a.button:hover {
   background: var(--c-cta);
   outline: 2px solid black;
   color: white;
-}
-
-.big a {
-  background: var(--c-highlight);
 }
 
 .big a.alt-link {
@@ -528,6 +528,10 @@ dd {
 }
 
 @media screen and (min-width: 600px) {
+  .big a {
+    padding: 24px;
+    display: inline;
+  }
   .locations {
     display: grid;
     column-gap: 8px;

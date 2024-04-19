@@ -2,6 +2,7 @@
   --c-bg: #ffe958;
   --c-highlight: #ffcf0b;
   --c-highlight-light: #ffc00b;
+  --c-highlight-fg: #484848;
   --c-cta: #ffa10b;
   --c-primary: #333;
 }
@@ -75,12 +76,13 @@ p a {
 a.button:hover {
   background: var(--c-cta);
   outline: 2px solid black;
-  color: white;
+  color: var(--c-highlight-fg);
 }
 
 .big a.alt-link {
   background: var(--c-cta);
-  color: white;
+  background: #ffa10b;
+  color: var(--c-highlight-fg);
   margin-left: 20px;
 }
 
@@ -91,7 +93,8 @@ a.button:hover {
   margin: 0 auto;
   text-align: center;
   background: var(--c-cta);
-  color: white;
+  background: #ffa10b;
+  color: var(--c-highlight-fg);
   padding: 18px 48px;
 }
 

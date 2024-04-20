@@ -21,6 +21,7 @@
     <meta property="og:url" content="https://2023.ffconf.org/">
     <meta property="og:title" content="ffconf 🌟 UK web conference since 2009">
     <meta property="og:description" content="ffconf - the UK's best JavaScript and Web conference in Brighton.">
+    <script src="./assets/when-do.mjs" type="module"></script>
   </head>
 
   <body>
@@ -34,11 +35,14 @@
     <main>
 
       <h2 id="tickets">Tickets</h2>
-      <p>Our tickets will be available at 10am UK time on 22nd April, but if you want a feel for what to
-        expect, please browse and enjoy our <a target="_blank" href="https://ffconf.org/talks">previous event talks</a>.
-      </p>
+      <when-do datetime="2024-04-22T09:00:00Z" do="hide">
+        <p>Our tickets will be available at 10am UK time on 22nd April, but if you want a feel for what to
+          expect, please browse and enjoy our <a target="_blank" href="https://ffconf.org/talks">previous event
+            talks</a>.
+        </p>
+      </when-do>
 
-      <p hidden id="buynow" class="cta"><a class="button" href="https://buytickets.at/ffconf2022/707580">Buy now @
+      <p hidden id="buynow" class="cta"><a class="button" href="https://buytickets.at/ffconf2024/1060395">Buy now @
           £249+VAT</a></p>
       <p id="available" class="cta"><span class="button">Launching in <output id="output">…</output></span></p>
       <script>

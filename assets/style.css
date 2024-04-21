@@ -551,3 +551,14 @@ dd {
     font-size: 1.7rem;
   }
 }
+
+.strap {
+  font-family: 'duospacebold', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+
+  font-size: 1.2rem;
+}
+
+section + section {
+  margin-top: 64px;
+}

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ffconf 2024 - UK web and JavaScript conference</title>
-    <meta name="description" content="ffconf - the UK's best JavaScript and Web conference in Brighton" />
+    <meta name="description"
+      content="ffconf / 2024-11-08 / A full day of eight carefully curated sessions for an audience that cares about the future of the web, and who want their ideas challenged." />
     <link rel="stylesheet" href="/assets/font.css">
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16.png">
@@ -20,7 +21,8 @@
     <meta name="twitter:creator" content="@ffconf">
     <meta property="og:url" content="https://2023.ffconf.org/">
     <meta property="og:title" content="ffconf 🌟 UK web conference since 2009">
-    <meta property="og:description" content="ffconf - the UK's best JavaScript and Web conference in Brighton.">
+    <meta property="og:description"
+      content="ffconf / 2024-11-08 / A full day of eight carefully curated sessions for an audience that cares about the future of the web, and who want their ideas challenged.">
     <script src="./assets/when-do.mjs" type="module"></script>
   </head>
 
@@ -30,137 +32,153 @@
         <img title="ffconf" src="./assets/logo2024.svg">
       </h1>
       <h2>ffconf</h2>
-      <h3>Back Friday 8 November</h3>
+      <h3>Friday 8 November</h3>
     </header>
     <main>
 
-      <h2 id="tickets">Tickets</h2>
-      <when-do datetime="2024-04-22T09:00:00Z" do="hide">
-        <p>Our tickets will be available at 10am UK time on 22nd April, but if you want a feel for what to
-          expect, please browse and enjoy our <a target="_blank" href="https://ffconf.org/talks">previous event
-            talks</a>.
-        </p>
-      </when-do>
+      <section>
+        <p class="strap">A full day of eight carefully curated sessions for an audience that cares about the future of
+          the
+          web, and who
+          want their ideas challenged.</p>
+      </section>
+      <section>
+        <h2 id="tickets">Tickets</h2>
+        <when-do datetime="2024-04-22T09:00:00Z" do="hide">
+          <p>Our tickets will be available at 10am UK time on 22nd April, but if you want a feel for what to
+            expect, please browse and enjoy our <a target="_blank" href="https://ffconf.org/talks">previous event
+              talks</a>.
+          </p>
+        </when-do>
 
-      <p hidden id="buynow" class="cta"><a class="button" href="https://buytickets.at/ffconf2024/1060395">Buy now @
-          £249+VAT</a></p>
-      <p id="available" class="cta"><span class="button">Launching in <output id="output">…</output></span></p>
-      <script>
-        const t = Date.parse("2024-04-22T09:00:00Z");
-        const output = document.getElementById('output');
+        <p hidden id="buynow" class="cta"><a class="button" href="https://buytickets.at/ffconf2024/1060395">Buy now @
+            £249+VAT</a></p>
+        <p id="available" class="cta"><span class="button">Launching in <output id="output">…</output></span></p>
+        <script>
+          const t = Date.parse("2024-04-22T09:00:00Z");
+          const output = document.getElementById('output');
 
-        function update() {
-          const now = Date.now();
+          function update() {
+            const now = Date.now();
 
-          if (now > t) {
-            document.getElementById('available').hidden = true;
-            document.getElementById('buynow').hidden = false;
-          } else {
-            const milliseconds = (t - now);
-            const ms = (milliseconds % 1000).toFixed(0).padStart(3, '0');
-            const seconds = ((milliseconds / 1000) % 60).toFixed(0).padStart(2, '0');
-            const minutes = (((milliseconds / (1000 * 60)) % 60)).toFixed(0).padStart(2, '0');
-            const hours = (((milliseconds / (1000 * 60 * 60)) % 24)).toFixed(0).padStart(2, '0');
-            const days = (((milliseconds / (1000 * 60 * 60 * 24)))).toFixed(0);
-
-            if (days > 0) {
-              output.textContent = `${days}d, ${hours}h${minutes}m${seconds}.${ms}`;
+            if (now > t) {
+              document.getElementById('available').hidden = true;
+              document.getElementById('buynow').hidden = false;
             } else {
-              output.textContent = `${hours}h${minutes}m${seconds}.${ms}`;
+              const milliseconds = (t - now);
+              const ms = (milliseconds % 1000).toFixed(0).padStart(3, '0');
+              const seconds = ((milliseconds / 1000) % 60).toFixed(0).padStart(2, '0');
+              const minutes = (((milliseconds / (1000 * 60)) % 60)).toFixed(0).padStart(2, '0');
+              const hours = (((milliseconds / (1000 * 60 * 60)) % 24)).toFixed(0).padStart(2, '0');
+              const days = (((milliseconds / (1000 * 60 * 60 * 24)))).toFixed(0);
+
+              if (days > 0) {
+                output.textContent = `${days}d, ${hours}h${minutes}m${seconds}.${ms}`;
+              } else {
+                output.textContent = `${hours}h${minutes}m${seconds}.${ms}`;
+              }
+
+
+              requestAnimationFrame(update);
             }
-
-
-            requestAnimationFrame(update);
           }
-        }
-        update();
-      </script>
+          update();
+        </script>
 
-      <p><small>This is our main run of tickets priced at £249+VAT.</small></p>
+        <p><small>This is our main run of tickets priced at £249+VAT.</small></p>
+      </section>
+      <section>
 
-      <h2 id="what-to-expect">What to Expect</h2>
-      <ul>
-        <li>📅 Friday 08-Nov 2024 in Brighton</li>
-        <li>⏰ 9-6pm all day conference</li>
-        <li>🌟 Eight amazing and inspiring talks</li>
-        <li>😌 Incredibly comfortable seats</li>
-        <li>🏰 Held at <a href="https://www.picturehouses.com/cinema/duke-of-york-s-picturehouse/information">Duke of
-            Yorks</a> cinema</li>
-        <li>🤗 After party to socialise, network &amp; play games</li>
-        <li>🦾 <a href="https://ffconf.org/scholarship/">Inclusion scholarship programme</a></li>
-        <li>🌈 Sunshine 100% (not) guaranteed</li>
-      </ul>
+        <h2 id="what-to-expect">What to Expect</h2>
+        <ul>
+          <li>📅 Friday 8-Nov 2024 in Brighton</li>
+          <li>⏰ 9-6pm all day conference</li>
+          <li>🌟 Eight amazing and inspiring talks</li>
+          <li>😌 Incredibly comfortable seats</li>
+          <li>🏰 Held at <a href="https://www.picturehouses.com/cinema/duke-of-york-s-picturehouse/information">Duke of
+              Yorks</a> cinema</li>
+          <li>🤗 After party to socialise, network &amp; play games</li>
+          <li>🦾 <a href="https://ffconf.org/scholarship/">Inclusion scholarship programme</a></li>
+          <li>🌈 Sunshine 100% (not) guaranteed</li>
+        </ul>
+      </section>
 
+      <section>
+        <h2 id="locations">Locations</h2>
+        <div class="locations">
+          <div>
+            <h3 id="venues">Venues</h3>
+            <dl>
+              <dt>The Conference</dt>
+              <dd><a href="https://www.picturehouses.com/cinema/duke-of-york-s-picturehouse/information">Duke of
+                  Yorks cinema</a></dd>
 
-      <h2 id="locations">Locations</h2>
-      <div class="locations">
-        <div>
-          <h3 id="venues">Venues</h3>
-          <dl>
-            <dt>The Conference</dt>
-            <dd><a href="https://www.picturehouses.com/cinema/duke-of-york-s-picturehouse/information">Duke of
-                Yorks cinema</a></dd>
+              <dt>Early morning networking from 7:30am</dt>
+              <dd><a href="https://facebook.com/MoesatTheCircus/">Moe's at the
+                  Circus</a></dd>
+              <dt>"Lunch with Future Friends" and social on Thursday</dt>
+              <dd><a href="https://thelounges.co.uk/alcampo/">Al
+                  Campo</a></dd>
+            </dl>
+          </div>
+          <div>
+            <h3 id="hotels">Hotels</h3>
+            <dl>
+              <dt><a href="https://www.jurysinns.com/hotels/brighton">Jury's Inn</a></dt>
+              <dd>From £98, next to train station & close to venue</dd>
 
-            <dt>Early morning networking from 7:30am</dt>
-            <dd><a href="https://facebook.com/MoesatTheCircus/">Moe's at the
-                Circus</a></dd>
-            <dt>"Lunch with Future Friends" and social on Thursday</dt>
-            <dd><a href="https://thelounges.co.uk/alcampo/">Al
-                Campo</a></dd>
-          </dl>
+              <dt><a
+                  href="https://www.accorhotels.com/gb/hotel-6444-ibis-brighton-city-centre-station/index.shtml">Ibis</a>
+              </dt>
+              <dd>
+                From £87, directly outside the front of the station</dd>
+              <dt><a href="https://www.travelodge.co.uk/hotels/18/Brighton-hotel">Travelodge</a></dt>
+              <dd>From £71</dd>
+              <dt>
+                <a href="https://www.jurysinns.com/hotels/brighton-waterfront">Jury's Inn Waterfront</a>
+              </dt>
+              <dd>
+                From £157, close to after party venue</dd>
+            </dl>
+          </div>
         </div>
-        <div>
-          <h3 id="hotels">Hotels</h3>
-          <dl>
-            <dt><a href="https://www.jurysinns.com/hotels/brighton">Jury's Inn</a></dt>
-            <dd>From £98, next to train station & close to venue</dd>
+      </section>
 
-            <dt><a
-                href="https://www.accorhotels.com/gb/hotel-6444-ibis-brighton-city-centre-station/index.shtml">Ibis</a>
-            </dt>
-            <dd>
-              From £87, directly outside the front of the station</dd>
-            <dt><a href="https://www.travelodge.co.uk/hotels/18/Brighton-hotel">Travelodge</a></dt>
-            <dd>From £71</dd>
-            <dt>
-              <a href="https://www.jurysinns.com/hotels/brighton-waterfront">Jury's Inn Waterfront</a>
-            </dt>
-            <dd>
-              From £157, close to after party venue</dd>
-          </dl>
-        </div>
-      </div>
+      <section>
 
-      <div class="get-involved">
         <h2 id="get-involved">Get involved</h2>
         <ul class="big">
           <li><a href="https://ffconf.org/cfp-apply">Apply to speak</a></li>
           <li><a class="alt-link" href="https://ffconf.org/scholarship">Apply for our inclusion scholarship</a></li>
           <li><a href="https://ffconf.org/news">Subscribe for the latest announcements</a></li>
         </ul>
-      </div>
+        </div>
+      </section>
 
-      <div hidden class="sponsors-wrapper">
+      <section>
+
         <h2 id="sponsors">Sponsors</h2>
         <p>Without our sponsors and supporters, our event would not be possible, please take a moment to look at their
           web sites and find out more about them.</p>
         <p>Include your company to support ffconf and <a
             href="mailto:events@leftlogic.com?subject=Request%20for%20sponsor%20pack%20%5B2022%5D">request
             sponsor pack today</a></p>
-        <div class="sponsors l1">
+        <div hidden class="sponsors l1">
           <h3>Platinum supporter</h3>
 
         </div>
-        <div class="sponsors l2">
+        <div hidden="sponsors l2">
           <h3>Day supporters</h3>
 
         </div>
         <div class="sponsors l3">
           <h3>Scholarship supporters</h3>
 
+          <a href="https://tetralogical.com/" class="sponsor">
+            <img src="./assets/sponsors/tetra-logical.svg" alt="TetraLogical"></a>
         </div>
 
-      </div>
+      </section>
     </main>
     <footer>
       <ul>

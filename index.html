@@ -55,7 +55,7 @@
             £249+VAT</a></p>
         <p id="available" class="cta"><span class="button">Launching in <output id="output">…</output></span></p>
         <script>
-          const t = Date.parse("2024-04-22T09:00:00Z");
+          const t = Date.parse("2024-04-22T09:00:00+0000");
           const output = document.getElementById('output');
 
           function update() {
@@ -167,15 +167,15 @@
           <h3>Platinum supporter</h3>
 
         </div>
-        <div hidden="sponsors l2">
+        <div class="sponsors l2">
           <h3>Day supporters</h3>
-
-        </div>
-        <div class="sponsors l3">
-          <h3>Scholarship supporters</h3>
 
           <a href="https://tetralogical.com/" class="sponsor">
             <img src="./assets/sponsors/tetra-logical.svg" alt="TetraLogical"></a>
+        </div>
+        <div hidden class="sponsors l3">
+          <h3>Scholarship supporters</h3>
+
         </div>
 
       </section>

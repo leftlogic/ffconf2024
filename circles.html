@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circles</title>
+    <style>
+      svg>circle {
+        transition: fill 500ms ease-out
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <svg width="1508" id="container" height="548" viewBox="0 0 1508 548" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <svg x="0" y="0" id="template">
+          <circle cx="39" cy="39" r="39" fill="inherit" />
+        </svg>
+      </svg>
+    </div>
+
+    <script>
+      const COLS = 16;
+
+      const colours = ['#FFA19E', '#79E6F1', '#F2AB40', '#9DD37C', '#FFE994', '#A9B5C8', '#C9939B', '#6B8E8E'];
+
+      const bag = colours.map((colour, i) => {
+        return Array.from({ length: 12 }, () => colour);
+      }, []).flat();
+
+      // use the fisher yates shuffle to randomise the `bag` array
+      for (let i = bag.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [bag[i], bag[j]] = [bag[j], bag[i]];
+      }
+
+      const getXYForIndex = i => {
+        const x = i % COLS;
+        const y = (i / COLS) | 0;
+
+        return { x, y };
+      };
+
+      const template = document.querySelector('#template');
+      const padding = 16;
+      const width = 78;
+      const height = 78;
+
+      const circles = [];
+
+      for (let i = 0; i < 96; i++) {
+        const clone = template.cloneNode(true);
+        const colour = bag.shift();
+        clone.setAttribute('fill', colour);
+        const coords = getXYForIndex(i);
+        const x = (coords.x * width) + padding * coords.x;
+        const y = (coords.y * height) + padding * coords.y;
+        clone.setAttribute('x', x);
+        clone.setAttribute('y', y);
+        document.querySelector('#container').appendChild(clone);
+        circles.push(clone);
+      }
+      template.remove();
+
+      let index = 0;
+      let lastIndex = index;
+      let last = circles[index].getAttribute('fill');
+      let current;
+      // index = (index + 1) % circles.length;
+
+      setInterval(() => {
+        lastIndex = index;
+        index = (index + 1) % circles.length;
+        current = circles[index].getAttribute('fill');
+        circles[lastIndex].setAttribute('fill', current);
+        circles[index].setAttribute('fill', last);
+        // last = current;
+      }, 1000);
+
+
+      // let search = 0;
+      // setInterval(() => {
+
+      //   let needle = Math.random() * 8 | 0;
+      //   let ctr = 0;
+      //   const i = circles.findIndex(_ => {
+      //     if (colours[search] !== _.getAttribute('fill')) return false;
+
+      //     if (ctr === needle) return true;
+      //     ctr++;
+      //   });
+
+      //   search = (search + 1) % 8;
+      //   circles[i].setAttribute('fill', colours[search]);
+
+      // }, 300);
+    </script>
+
+  </body>
+
+</html>

@@ -28,46 +28,129 @@
 
   <body>
     <header>
-      <h1>
-        <img title="ffconf" src="./assets/logo2024.svg">
-      </h1>
+      <img width="360" height="360" class="logo" title="ffconf" src="./assets/logo2024.svg">
     </header>
-    <main>
+    <main class="col_span_6">
 
-      <section>
-        <p class="strap">A full day of eight carefully curated sessions for an audience that cares about the future of
-          the
-          web, and who
-          want their ideas challenged.</p>
-
-        <p id="buynow" class="cta">
+      <section class="flex">
+        <h1 class="col_span_4">ffconf<br>8 Nov 2024</h1>
+        <p id="buynow" class="cta col_span_2">
           <a class="pill" href="https://buytickets.at/ffconf2024/1060395">Buy tickets</a>
           <span class="pill pill-alt">£249+VAT</span>
         </p>
-
       </section>
+
+      <p class="strap col_span_3">A full day of eight carefully curated sessions for an audience that cares about the
+        future of the web, and who want their ideas challenged.</p>
+
+
       <section id="what-to-expect">
 
-        <!-- <h2>What to Expect</h2> -->
-        <ul>
-          <li>📅 Friday 8-Nov 2024 in Brighton</li>
-          <li>⏰ 9-6pm all day conference</li>
-          <li>🌟 Eight amazing and inspiring talks</li>
-          <li>😌 Incredibly comfortable seats</li>
-          <li>🏰 Held at <a href="https://www.picturehouses.com/cinema/duke-of-york-s-picturehouse/information">Duke of
-              Yorks</a> cinema</li>
-          <li>🤗 After party to socialise, network &amp; play games</li>
-          <li>🦾 <a href="https://ffconf.org/scholarship/">Inclusion scholarship programme</a></li>
-          <li>🌈 Sunshine 100% (not) guaranteed</li>
-        </ul>
+        <ffconf-card-holder>
+          <ffconf-card>
+            <img title="ffconf" src="../assets/icons/venue.svg">
+            <p>Held at the <a href="https://www.picturehouses.com/cinema/duke-of-york-s-picturehouse/information">Duke
+                of
+                Yorks</a> cinema</p>
+          </ffconf-card>
+          <ffconf-card>
+            <img title="ffconf" src="../assets/icons/weather.svg">
+            <p>Located in
+              sunny* Brighton, UK</p>
+          </ffconf-card>
+          <ffconf-card>
+            <img title="ffconf" src="../assets/icons/star.svg">
+            <p>8 amazing
+              and
+              inspiring talks</p>
+          </ffconf-card>
+          <ffconf-card>
+            <img title="ffconf" src="../assets/icons/date.svg">
+            <p>All-day
+              conference
+              from 9-6pm)</p>
+          </ffconf-card>
+          <ffconf-card>
+            <img title="ffconf" src="../assets/icons/scholarship.svg">
+            <p>Inclusion
+              scholarship
+              programme</p>
+          </ffconf-card>
+          <ffconf-card>
+            <img title="ffconf" src="../assets/icons/party.svg">
+            <p>After
+              party to socialise, network & play</p>
+          </ffconf-card>
+        </ffconf-card-holder>
 
-        <p><small>Our speakers haven't been announced yet, but as they are, this site will be updated and we'll post on
-            our
-            socials (<a href="https://social.ffconf.org/@ffconf">Mastodon</a> &amp; <a
-              href="https://twitter.com/ffconf">Twitter</a>).</small></p>
+        <p><small>* Sunshine 100% (not) guaranteed</small></p>
       </section>
 
-      <section>
+      <section id="sessions">
+        <h2>Sessions</h2>
+
+        <div class="container">
+          <ffconf-session data-id="1">
+            <header>
+              <ffconf-speaker-image><img src="/assets/speakers/rem.jpg"></ffconf-speaker-image>
+              <h3 class="col_span_3">Imposter syndrome, overworking, and working environments</h3>
+              <ffconf-speaker-details>
+                <p>Florence Okoye (she/her)</p>
+                <time class="dt-start" datetime="2024-11-08T09:00">09:00</time>
+                <time class="dt-end" datetime="2024-11-08T09:00">09:40</time>
+              </ffconf-speaker-details>
+            </header>
+            <ffconf-session-details>
+              <dl>
+                <dt>The Talk</dt>
+                <dd>Delight. Inclusion. Awareness. Justice. Reparation. That's a lot to embed into every workflow. Are
+                  there ways that we can combine data and research to empower the people who use our products? Is there
+                  anything from critical design.</dd>
+                <dt>Origin Story</dt>
+                <dd>Florence always wanted to do interesting things and making them at least vaguely useful!</dd>
+              </dl>
+            </ffconf-session-details>
+          </ffconf-session>
+
+          <ffconf-break>
+            <img src="/assets/icons/more-speakers.svg" alt="">
+
+            <p>More speakers to be announced soon</p>
+          </ffconf-break>
+        </div>
+      </section>
+
+      <section id="get-involved">
+        <h2>Get involved</h2>
+        <ul class="container">
+          <li>
+            <ffconf-link class="speak">
+              <a href="https://ffconf.org/cfp">
+                <p class="category">Conference</p>
+                <p class="title">Apply to speak at <abbr title="FF Conf">ffconf</abbr></p>
+              </a>
+            </ffconf-link>
+          </li>
+          <li>
+            <ffconf-link class="scholarship">
+              <a href="https://ffconf.org/scholarship">
+                <p class="category">Equality for all</p>
+                <p class="title">Apply for our inclusion scholarship</p>
+              </a>
+            </ffconf-link>
+          </li>
+          <li>
+            <ffconf-link class="news">
+              <a href="https://ffconf.org/news">
+                <p class="category">Subscribe</p>
+                <p class="title">Get the latest news for <abbr title="FF Conf">ffconf</abbr></p>
+              </a>
+            </ffconf-link>
+          </li>
+        </ul>
+      </section>
+
+      <section hidden>
         <h2 id="locations">Locations</h2>
         <div class="locations">
           <div>
@@ -108,53 +191,45 @@
         </div>
       </section>
 
-      <section>
+      <section id="sponsors">
 
-        <h2 id="get-involved">Get involved</h2>
-        <ul class="big">
-          <li><a href="https://ffconf.org/cfp-apply">Apply to speak</a></li>
-          <li><a class="alt-link" href="https://ffconf.org/scholarship">Apply for our inclusion scholarship</a></li>
-          <li><a href="https://ffconf.org/news">Subscribe for the latest announcements</a></li>
-        </ul>
-        </div>
-      </section>
-
-      <section>
-
-        <h2 id="sponsors">Sponsors</h2>
+        <h2>Sponsors</h2>
         <p>Without our sponsors and supporters, our event would not be possible, please take a moment to look at their
           web sites and find out more about them.</p>
         <p>Include your company to support ffconf and <a
             href="mailto:events@leftlogic.com?subject=Request%20for%20sponsor%20pack%20%5B2022%5D">request
-            sponsor pack today</a></p>
+            sponsor pack</a> today.</p>
+
         <div hidden class="sponsors l1">
           <h3>Platinum supporter</h3>
 
         </div>
         <div class="sponsors l2">
-          <h3>Day supporters</h3>
+          <h3>Day supporter</h3>
 
           <a href="https://tetralogical.com/" class="sponsor">
             <img src="./assets/sponsors/tetra-logical.svg" alt="TetraLogical"></a>
         </div>
-        <div hidden class="sponsors l3">
-          <h3>Scholarship supporters</h3>
-
+        <div class="sponsors l3">
+          <h3>Become a sponsor</h3>
+          <a href="mailto:events@leftlogic.com?subject=Request%20for%20sponsor%20pack%20%5B2022%5D">Request sponsorship
+            pack</a>
         </div>
 
       </section>
+
+      <footer>
+        <ul>
+          <li><a href="https://ffconf.org/accessibility">Venue Accessibility</a></li>
+          <li><a href="https://ffconf.org/covid">COVID policy</a></li>
+          <li><a href="https://ffconf.org/inclusion">Inclusion Statement</a></li>
+          <li><a href="https://ffconf.org/scholarship">Scholarship Programme</a></li>
+          <li><a href="https://ffconf.org/code-of-conduct">Code of Conduct</a></li>
+          <li><a href="https://ffconf.org/terms">Terms</a></li>
+          <li><a href="https://ffconf.org/privacy">Privacy</a></li>
+        </ul>
+      </footer>
     </main>
-    <footer>
-      <ul>
-        <li><a href="https://ffconf.org/accessibility">Venue Accessibility</a></li>
-        <li><a href="https://ffconf.org/covid">COVID policy</a></li>
-        <li><a href="https://ffconf.org/inclusion">Inclusion Statement</a></li>
-        <li><a href="https://ffconf.org/scholarship">Scholarship Programme</a></li>
-        <li><a href="https://ffconf.org/code-of-conduct">Code of Conduct</a></li>
-        <li><a href="https://ffconf.org/terms">Terms</a></li>
-        <li><a href="https://ffconf.org/privacy">Privacy</a></li>
-      </ul>
-    </footer>
     <!-- nope, no tracking here today. -->
   </body>
 

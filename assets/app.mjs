@@ -52,26 +52,28 @@ function main(container, template) {
   }
   template.remove();
 
-  let index = 0;
-  let lastIndex = index;
+  let index = (Math.random() * circles.length) | 0;
   let last = circles[index].getAttribute('fill');
+  let lastIndex = index;
   let current;
   // index = (index + 1) % circles.length;
 
   let lastTick = performance.now();
   function mix(delta) {
     requestAnimationFrame(mix);
-    if (delta - lastTick < Math.random() * 1000) {
+    if (delta - lastTick < 100 + Math.random() * 200) {
       return;
     }
 
     lastTick = delta;
     // sequence
-    lastIndex = index;
+    // lastIndex = (Math.random() * circles.length) | 0;
     index = (Math.random() * circles.length) | 0;
     current = circles[index].getAttribute('fill');
     circles[lastIndex].setAttribute('fill', current);
-    circles[index].setAttribute('fill', last);
+    // circles[index].setAttribute('fill', last);
+    last = current;
+    lastIndex = index;
 
     update(container);
   }

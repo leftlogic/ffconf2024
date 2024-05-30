@@ -28,6 +28,7 @@ html {
 abbr {
   font-weight: inherit;
   text-decoration: inherit;
+  font-size: inherit;
 }
 
 .logo {

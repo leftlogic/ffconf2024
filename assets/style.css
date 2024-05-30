@@ -380,15 +380,16 @@ ffconf-link {
   }
 
   p {
-    margin: 56px 0;
+    margin: 48px 0;
 
-    &:last-child {
+    &:
+    last-child {
       margin-bottom: 0;
     }
   }
 
   .container {
-    margin-top: 80px;
+    margin-top: 56px;
     grid-area: sponsor-body;
     display: grid;
     grid-auto-columns: 1fr 1fr;
@@ -537,8 +538,13 @@ ffconf-link {
       'sponsor-body sponsor-body';
     align-items: start;
 
+    p:first-child {
+      margin-top: 0;
+    }
+
     .container {
       grid-template-columns: 1fr 1fr;
+      margin-top: 80px;
     }
   }
 

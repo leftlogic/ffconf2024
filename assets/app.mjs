@@ -61,7 +61,7 @@ function main(container, template) {
   let lastTick = performance.now();
   function mix(delta) {
     requestAnimationFrame(mix);
-    if (delta - lastTick < 100 + Math.random() * 200) {
+    if (delta - lastTick < 500 + Math.random() * 800) {
       return;
     }
 

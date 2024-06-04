@@ -52,7 +52,6 @@ body > header {
   margin-bottom: 48px;
 }
 
-
 .grid_container {
   display: grid;
   grid-template-columns: repeat(6, 176px);
@@ -231,13 +230,121 @@ ffconf-session {
     display: block;
     grid-area: avatar;
   }
+
+  &[data-id='1'] {
+    ffconf-speaker-image:after {
+      background: linear-gradient(
+        0deg,
+        rgba(121, 230, 241, 0.25),
+        rgba(121, 230, 241, 0.25)
+      );
+    }
+
+    img {
+      outline-color: rgb(121, 230, 241);
+    }
+  }
+
+  &[data-id='2'] {
+    ffconf-speaker-image:after {
+      background: linear-gradient(
+        0deg,
+        rgba(255, 161, 158, 0.25),
+        rgba(255, 161, 158, 0.25)
+      );
+    }
+
+    img {
+      outline-color: rgb(255, 161, 158);
+    }
+  }
+
+  &[data-id='3'] {
+    ffconf-speaker-image:after {
+      background: linear-gradient(
+        0deg,
+        rgba(242, 171, 64, 0.25),
+        rgba(242, 171, 64, 0.25)
+      );
+    }
+
+    img {
+      outline-color: rgb(242, 171, 64);
+    }
+  }
+
+  &[data-id='4'] {
+    ffconf-speaker-image:after {
+      background: linear-gradient(
+        0deg,
+        rgba(157, 211, 124, 0.25),
+        rgba(157, 211, 124, 0.25)
+      );
+    }
+
+    img {
+      outline-color: rgb(157, 211, 124);
+    }
+  }
+
+  &[data-id='5'] {
+    ffconf-speaker-image:after {
+      background: linear-gradient(
+        0deg,
+        rgba(255, 233, 148, 0.25),
+        rgba(255, 233, 148, 0.25)
+      );
+    }
+
+    img {
+      outline-color: rgb(255, 233, 148);
+    }
+  }
+
+  &[data-id='6'] {
+    ffconf-speaker-image:after {
+      background: linear-gradient(
+        0deg,
+        rgba(169, 181, 200, 0.25),
+        rgba(169, 181, 200, 0.25)
+      );
+    }
+
+    img {
+      outline-color: rgb(169, 181, 200);
+    }
+  }
+
+  &[data-id='7'] {
+    ffconf-speaker-image:after {
+      background: linear-gradient(
+        0deg,
+        rgba(201, 147, 155, 0.25),
+        rgba(201, 147, 155, 0.25)
+      );
+    }
+
+    img {
+      outline-color: rgb(201, 147, 155);
+    }
+  }
+
+  &[data-id='8'] {
+    ffconf-speaker-image:after {
+      background: linear-gradient(
+        0deg,
+        rgba(107, 142, 142, 0.25),
+        rgba(107, 142, 142, 0.25)
+      );
+    }
+
+    img {
+      outline-color: rgb(107, 142, 142);
+    }
+  }
+
   ffconf-speaker-image:after {
     /* colours should be based on order */
-    background: linear-gradient(
-      0deg,
-      rgba(121, 230, 241, 0.25),
-      rgba(121, 230, 241, 0.25)
-    );
     content: '';
     position: absolute;
     top: 0;
@@ -382,8 +489,7 @@ ffconf-link {
   p {
     margin: 48px 0;
 
-    &:
-    last-child {
+    &:last-child {
       margin-bottom: 0;
     }
   }
@@ -402,7 +508,7 @@ ffconf-link {
   padding: 32px 40px;
   display: grid;
   grid-template-rows: auto 1fr;
-  
+
   h3 {
     text-transform: uppercase;
   }
@@ -427,7 +533,6 @@ ffconf-link {
     font-size: 16px;
     justify-self: center;
   }
-  
 }
 
 @media screen and (min-width: 640px) {
@@ -462,13 +567,13 @@ ffconf-link {
   }
 
   ffconf-link {
-    a { 
+    a {
       background-position: 24px center, right center;
-      background-size: 48px 48px, 30px 30px; 
+      background-size: 48px 48px, 30px 30px;
 
       margin: 32px 40px;
       gap: 0;
-  
+
       &:first-child {
         padding-top: 0px;
       }
@@ -477,8 +582,6 @@ ffconf-link {
     p {
       padding-left: 120px;
     }
-  
-
   }
 
   ffconf-card-holder {

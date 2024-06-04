@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>top card</title>
+    <link rel="stylesheet" href="../assets/fonts/sataoshi-variable.css">
+    <link rel="stylesheet" href="../assets/style.css">
+    <style>
+      ffconf-card-holder {
+        display: grid;
+      
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 8px 8px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          ". . ."
+          ". . .";
+
+      }
+
+      ffconf-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #F2F1ED;
+        padding: 40px 80px;
+        font-size: 18px;
+        gap: 16px;
+
+        * {
+          font-size: inherit;
+          text-align: center;
+        }
+      }
+
+      ffconf-container {
+        width: 360px;
+        height: 216px;
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <ffconf-component>
+      <ffconf-card-holder>
+        <ffconf-card>
+          <img title="ffconf" src="../assets/icons/venue.svg">
+          <p>Held at the <a href="https://www.picturehouses.com/cinema/duke-of-york-s-picturehouse/information">Duke of
+              Yorks</a> cinema</p>
+        </ffconf-card>
+        <ffconf-card>
+          <img title="ffconf" src="../assets/icons/weather.svg">
+          <p>Located in
+            sunny* Brighton, UK</p>
+        </ffconf-card>
+        <ffconf-card>
+          <img title="ffconf" src="../assets/icons/star.svg">
+          <p>8 amazing
+            and
+            inspiring talks</p>
+        </ffconf-card>
+        <ffconf-card>
+          <img title="ffconf" src="../assets/icons/date.svg">
+          <p>All-day
+            conference
+            from 9-6pm)</p>
+        </ffconf-card>
+        <ffconf-card>
+          <img title="ffconf" src="../assets/icons/scholarship.svg">
+          <p>Inclusion
+            scholarship
+            programme</p>
+        </ffconf-card>
+        <ffconf-card>
+          <img title="ffconf" src="../assets/icons/party.svg">
+          <p>After
+            party to socialise, network & play</p>
+        </ffconf-card>
+      </ffconf-card-holder>
+    </ffconf-component>
+  </body>
+
+</html>

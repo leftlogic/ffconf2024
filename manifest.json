@@ -1,0 +1,19 @@
+{
+  "name": "2024 FF Conf, Brighton 8-Nov 2024",
+  "short_name": "ffconf 2024",
+  "description": "ffconf - the UK's best JavaScript and Web conference in Brighton.",
+  "id": "/",
+  "start_url": "/",
+  "dir": "ltr",
+  "lang": "en",
+  "background_color": "#e5e3da",
+  "theme_color": "#f2ab40",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/favicons/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

@@ -702,3 +702,16 @@ ffconf-link {
     background-position: center calc(100% + 400px);
   }
 }
+
+.by {
+  opacity: 0.5;
+  font-size: inherit;
+  text-transform: lowercase;
+}
+
+ffconf-speaker-details p:first-child:before {
+  content: 'by ';
+  opacity: 0.5;
+  font-size: inherit;
+  text-transform: lowercase;
+}

@@ -715,3 +715,7 @@ ffconf-speaker-details p:first-child:before {
   font-size: inherit;
   text-transform: lowercase;
 }
+
+ffconf-speaker-details.next p:first-child:before {
+  content: '';
+}

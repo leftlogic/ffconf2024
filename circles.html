@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circles</title>
     <style>
+      html {
+        background: #e5e3da;
+      }
+
       svg>circle {
         transition: fill 500ms ease-out
       }
@@ -14,7 +18,7 @@
 
   <body>
     <div>
-      <svg width="1508" id="container" height="548" viewBox="0 0 1508 548" fill="none"
+      <svg width="1508" id="container" height="1000" viewBox="0 0 1508 1000" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <svg x="0" y="0" id="template">
           <circle cx="39" cy="39" r="39" fill="inherit" />
@@ -28,7 +32,7 @@
       const colours = ['#FFA19E', '#79E6F1', '#F2AB40', '#9DD37C', '#FFE994', '#A9B5C8', '#C9939B', '#6B8E8E'];
 
       const bag = colours.map((colour, i) => {
-        return Array.from({ length: 12 }, () => colour);
+        return Array.from({ length: 40 }, () => colour);
       }, []).flat();
 
       // use the fisher yates shuffle to randomise the `bag` array
@@ -51,7 +55,7 @@
 
       const circles = [];
 
-      for (let i = 0; i < 96; i++) {
+      for (let i = 0; i < 300; i++) {
         const clone = template.cloneNode(true);
         const colour = bag.shift();
         clone.setAttribute('fill', colour);

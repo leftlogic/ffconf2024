@@ -408,6 +408,17 @@ ffconf-session {
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
+
+    br {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    a {
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
   }
 
   padding: 32px 40px;

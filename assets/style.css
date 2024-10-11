@@ -62,6 +62,9 @@ body > header {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 ffconf-component {
@@ -214,7 +217,8 @@ small {
   font-size: 14px;
 }
 
-ffconf-session {
+ffconf-session,
+.ffconf-session {
   display: block;
   background: white;
   header {
@@ -603,7 +607,8 @@ ffconf-link {
     padding: 40px 80px;
   }
 
-  ffconf-session {
+  ffconf-session,
+  .ffconf-session {
     header {
       gap: 0 24px;
       align-items: center;

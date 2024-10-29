@@ -379,14 +379,26 @@ ffconf-session,
     display: flex;
     flex-direction: column-reverse;
     text-transform: uppercase;
+    justify-content: space-between;
+    
     p {
       color: #566969;
       font-size: 16px;
       font-weight: 500;
       line-height: 32px;
     }
+
+    div time:first-child:after {
+      content: '';
+      width: 62px;
+      border-bottom: 2px solid black;
+      display: inline-block;
+      margin: 4px 16px;
+    }
+    
     time {
-      display: none;
+      font-size: 16px;
+      font-weight: 500;
     }
     grid-area: name;
   }
@@ -551,6 +563,10 @@ ffconf-link {
 }
 
 @media screen and (min-width: 640px) {
+  .ffconf-session ffconf-speaker-details {
+    flex-direction: row;
+  }
+  
   .col_span_1 {
     max-width: 176px;
     width: calc(90vw / 6);

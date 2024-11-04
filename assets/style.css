@@ -81,24 +81,28 @@ main {
   box-sizing: content-box;
 }
 
-ffconf-break {
+.ffconf-break {
   background: #f2f1ed;
   display: grid;
-  padding: 24px;
-  gap: 16px;
+  padding: 32px 40px;
+
   grid:
     'break-img break-time'
-    'break-description break-description';
+    'break-img break-description';
+  gap: 16px;
+  /* grid-template-columns: 104px 2fr 1fr; */
+  /* align-items: center; */
   grid-template-columns: auto 1fr;
-  align-items: center;
 
   img {
     grid-area: break-img;
+    justify-self: center;
+    align-self: flex-start;
     width: 32px;
     height: 32px;
   }
 
-  time {
+  div:has(time) {
     grid-area: break-time;
     line-height: 24px;
     font-size: 16px;
@@ -106,8 +110,9 @@ ffconf-break {
 
   p {
     grid-area: break-description;
-    line-height: 32px;
-    font-size: 24px;
+    line-height: 16px;
+    font-size: 16px;
+    font-weight: 500;
     text-transform: uppercase;
   }
 }
@@ -215,6 +220,19 @@ ffconf-container {
 
 small {
   font-size: 14px;
+}
+
+div time:first-child:after {
+  content: '';
+  width: 62px;
+  border-bottom: 2px solid black;
+  display: inline-block;
+  margin: 4px 16px;
+}
+
+time {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 ffconf-session,
@@ -380,7 +398,7 @@ ffconf-session,
     flex-direction: column-reverse;
     text-transform: uppercase;
     justify-content: space-between;
-    
+
     p {
       color: #566969;
       font-size: 16px;
@@ -388,18 +406,6 @@ ffconf-session,
       line-height: 32px;
     }
 
-    div time:first-child:after {
-      content: '';
-      width: 62px;
-      border-bottom: 2px solid black;
-      display: inline-block;
-      margin: 4px 16px;
-    }
-    
-    time {
-      font-size: 16px;
-      font-weight: 500;
-    }
     grid-area: name;
   }
   h3 {
@@ -566,7 +572,7 @@ ffconf-link {
   .ffconf-session ffconf-speaker-details {
     flex-direction: row;
   }
-  
+
   .col_span_1 {
     max-width: 176px;
     width: calc(90vw / 6);
@@ -683,15 +689,29 @@ ffconf-link {
     }
   }
 
-  ffconf-break {
+  .ffconf-break {
+    padding: 32px 40px;
     gap: 24px;
     grid: 'break-img break-description break-time';
-    grid-template-columns: 96px 1fr auto;
+    grid-template-columns: 104px 2fr 1fr;
 
     img {
       width: 96px;
       height: 48px;
       object-fit: contain;
+      align-self: center;
+    }
+
+    p {
+      line-height: 32px;
+      font-size: 24px;
+      font-weight: initial;
+      align-self: center;
+    }
+
+    div:has(time) {
+      align-self: center;
+      justify-self: flex-end;
     }
   }
 

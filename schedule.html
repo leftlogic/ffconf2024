@@ -8,26 +8,35 @@
     <style>
       body {
         font-family: Arial, sans-serif;
+        font-size: 2rem;
         line-height: 1.6;
         margin: 0;
         padding: 0;
       }
 
       .schedule {
-        max-width: 600px;
-        margin: 20px auto;
+        /* max-width: 600px; */
+        margin: 0 auto;
         padding: 20px;
       }
 
       h1 {
         text-align: center;
         color: #333;
+        font-size: 36px;
+      }
+
+      @media print {
+        h1 {
+          margin: 0;
+        }
       }
 
       .session {
-        margin: 10px 0;
-        padding: 10px;
+        margin: 8px 0;
+        padding: 8px;
         border-bottom: 1px solid #ddd;
+        page-break-inside: avoid;
       }
 
       .time {
@@ -41,42 +50,70 @@
 
       .session {
         display: grid;
-        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr;
+      }
+
+      .time {
+        font-size: 1.6rem;
+        white-space: nowrap;
+      }
+
+      .what {
+        line-height: 1;
       }
     </style>
   </head>
 
   <body>
     <div class="schedule">
-      <h1>FFCONF 2024</h1>
+      <!-- yeah, gross tables, but it means the heading is on all pages -->
+      <table>
+        <thead>
+          <td>
+            <h1>FFCONF 2024</h1>
+          </td>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
 
-      <div class="session"><span class="time">09:00 &mdash; 09:40</span><span class="what">Registration</span></div>
-      <div class="session"><span class="time">09:40 &mdash; 09:50</span><span class="what">Opening remarks</span></div>
-      <div class="session"><span class="time">09:50 &mdash; 10:30</span><span class="what">Olu Niyi-Awosusi - <span
-            class="title">Build Better Webs</span></span></div>
-      <div class="session"><span class="time">10:30 &mdash; 11:10</span><span class="what">Léonie Watson - <span
-            class="title">AI and Accessibility: the Good, the Bad, and the Bollocks</span></span></div>
-      <div class="session"><span class="time">11:10 &mdash; 11:40</span><span class="what">Coffee break (30 mins)</span>
-      </div>
-      <div class="session"><span class="time">11:40 &mdash; 12:20</span><span class="what">Andy Bell - <span
-            class="title">Get the core right and the resilient code will follow</span></span></div>
-      <div class="session"><span class="time">12:20 &mdash; 13:00</span><span class="what">Kimberley Cook - <span
-            class="title">0 - 25,000 people! Growing a global community over 10 years</span></span></div>
-      <div class="session"><span class="time">13:00 &mdash; 14:30</span><span class="what">Lunch break (90 mins)</span>
-      </div>
-      <div class="session"><span class="time">14:30 &mdash; 15:10</span><span class="what">Amy Hupe - <span
-            class="title">It all means nothing in the end</span></span></div>
-      <div class="session"><span class="time">15:10 &mdash; 15:50</span><span class="what">Mike Hall - <span
-            class="title">Debugging the Mind: A Programmer's Guide to Critical Thinking</span></span></div>
-      <div class="session"><span class="time">15:50 &mdash; 16:15</span><span class="what">Ice cream break (25
-          minutes)</span> </div>
-      <div class="session"><span class="time">16:15 &mdash; 16:55</span><span class="what">Michael Kibedi - <span
-            class="title">Death, and how tech forgot about mortality</span></span></div>
-      <div class="session"><span class="time">16:55 &mdash; 17:35</span><span class="what">Imran Afzal - <span
-            class="title">The art of reflection</span></span></div>
-      <div class="session"><span class="time">17:35 &mdash; 17:50</span><span class="what">Closing remarks</span></div>
-      <div class="session"><span class="time">17:50 &mdash; Late</span><span class="what">After Party</span></div>
+              <div class="session"><span class="time">09:00 &mdash; 09:40</span><span class="what">Registration</span>
+              </div>
+              <div class="session"><span class="time">09:40 &mdash; 09:50</span><span class="what">Opening
+                  remarks</span></div>
+              <div class="session"><span class="time">09:50 &mdash; 10:30</span><span class="what">Olu Niyi-Awosusi -
+                  <span class="title">Build Better Webs</span></span></div>
+              <div class="session"><span class="time">10:30 &mdash; 11:10</span><span class="what">Léonie Watson - <span
+                    class="title">AI and Accessibility: the Good, the Bad, and the Bollocks</span></span></div>
+              <div class="session"><span class="time">11:10 &mdash; 11:40</span><span class="what">Coffee break (30
+                  mins)</span>
+              </div>
+              <div class="session"><span class="time">11:40 &mdash; 12:20</span><span class="what">Andy Bell - <span
+                    class="title">Get the core right and the resilient code will follow</span></span></div>
+              <div class="session"><span class="time">12:20 &mdash; 13:00</span><span class="what">Kimberley Cook -
+                  <span class="title">0 - 25,000 people! Growing a global community over 10 years</span></span></div>
+              <div class="session"><span class="time">13:00 &mdash; 14:30</span><span class="what">Lunch break (90
+                  mins)</span>
+              </div>
+              <div class="session"><span class="time">14:30 &mdash; 15:10</span><span class="what">Amy Hupe - <span
+                    class="title">It all means nothing in the end</span></span></div>
+              <div class="session"><span class="time">15:10 &mdash; 15:50</span><span class="what">Mike Hall - <span
+                    class="title">Debugging the Mind: A Programmer's Guide to Critical Thinking</span></span></div>
+              <div class="session"><span class="time">15:50 &mdash; 16:15</span><span class="what">Ice cream break (25
+                  minutes)</span> </div>
+              <div class="session"><span class="time">16:15 &mdash; 16:55</span><span class="what">Michael Kibedi -
+                  <span class="title">Death, and how tech forgot about mortality</span></span></div>
+              <div class="session"><span class="time">16:55 &mdash; 17:35</span><span class="what">Imran Afzal - <span
+                    class="title">The art of reflection</span></span></div>
+              <div class="session"><span class="time">17:35 &mdash; 17:50</span><span class="what">Closing
+                  remarks</span></div>
+              <div class="session"><span class="time">17:50 &mdash; Late</span><span class="what">After Party</span>
+              </div>
     </div>
+    </td>
+    </tr>
+    </tbody>
+    </table>
   </body>
 
 </html>
